@@ -1,0 +1,278 @@
+Plus you will get an overview of:
+
+Regressions
+
+Classifications
+
+Clustering
+
+Association rule learning
+
+Reinforcement learning
+
+Deep learning
+
+Data Preprocessing
+
+1)Finding Feature variables  and dependent variables in dataset
+Feature Variables are also called as independent variables
+Dependent Variables are all data information is dependening this depending variable to predict 
+Mostly Dependent variables are last rows in dataset
+Feature Varibales are first rows in dataset
+
+iloc is pandas dataframe  locate indexes 
+
+We have to do feature scaling after splitting the data into training set and test set
+To prevent information licage on the test data until it is tested for that we not applying feature sacling
+before spiting data. 
+
+Regression
+
+Simple Linear Regression y = b0 + b1x1
+Multiple Linear Regression y = b0 + b1x1 + b2x2 + ... + bnxn
+Polynomial Linear Regression y = b0 + b1x1 + b2x1^2 + ... + bnx1^n
+
+Feature Scaling
+Stadardisation
+Xstand = x - mean(X)
+        -------------
+         standard deviation(x) 
+it will put all values of the feature in between -3 and +3
+this will work at all the times
+beacuse it will do always some relavent feature scaling always improve the training process
+Xnorm = x - min(x)
+       ---------------
+	 max(x) - min(x)
+All the values of feature will become between 0 and 1
+it will be more suited for some specific situations
+
+Regression
+
+Regression models (both linear and non-linear) are used for predicting a real value, like salary for example. If your independent variable is time, then you are forecasting future values, otherwise your model is predicting present but unknown values. Regression technique vary from Linear Regression to SVR and Random Forests Regression.
+
+In this part, you will understand and learn how to implement the following Machine Learning Regression models:
+
+Simple Linear Regression
+
+Multiple Linear Regression
+
+Polynomial Regression
+
+Support Vector for Regression (SVR)
+
+Decision Tree Regression
+
+Random Forest Regression
+
+
+the method which is used to train our regression model is fit method
+
+
+predicting new regression line
+
+
+multiple linear regression no need to applyh feature scaling
+
+
+Assumptions of a Linear Regression
+
+1.Linearity
+2.Homoscedasticity
+3.Multivariate normality
+4.Independence of errors
+5.Lack of multicollinearity
+
+Dummy Variable
+We have to omit one dummy variable because the model cannot distinguish the difference between the effects of D1 and D2 when D2= 1 - D1. This can cause multicollinearity, meaning the model has a hard time predicting certain variables.
+ 
+5 methods of building a model
+
+1. All-in
+2. Backward Elimination(Most Powerfull One)
+3. Forward Selection
+4. Bidirectional Elimination
+5. Score Compsrison
+
+stepwise regression
+
+Backward Elimination
+Step1: Select a significance level to study in the model
+Step2: Fit the full model with all possible predictors
+step3: Consider the predictor with the highest p-value. if P > SL, go to step 4, otherwise go to FIN
+step4: Remove the predictors
+step5: fit the model without this variable
+
+Forward Selection
+step1: Select a significance level to enter the model(e.g SL = 0.05)
+step2: Fit all simple regression models y~Xn Select the one with lowest P-value
+step3 - Keep this variable and fit all posible models with one extra predictor added to the one(s) you alredy have
+step4: Consider the predictor with the lowest p-value. if P < SL, go to step 3, otherwise go to FIN
+FIn -> Keep the previous model
+
+All possible Models
+
+Multiple Linear Regression in Python - Backward Elimination
+
+As I explained in the previous tutorial, Backward Elimination is irrelevant in Python,
+ because the Scikit-Learn library automatically takes care of selecting the 
+statistically significant features when training the model to make accurate predictions.
+
+As students progress from learning Linear Regression to Multiple Linear Regression there are a few common questions that arise.
+
+This free bonus tackles two of the most frequently asked Multiple Linear Regression-related questions that we hear from students on their Machine Learning journey.
+
+Question 1: How do I use my multiple linear regression model to make a single prediction, for example, the profit of a startup with R&D Spend = 160000, Administration Spend = 130000, Marketing Spend = 300000 and State = California?
+
+Question 2: How do I get the final regression equation y = b0 + b1 x1 + b2 x2 + ... with the final values of the coefficients?
+
+Here’s the step-by-step coding exercise you receive in this Google Colab bonus:
+
+Importing libraries
+Importing datasets 
+Encoding categorical data 
+Splitting the data into Training and Test sets 
+Training the Multiple Linear Regression model on the Training set 
+Predicting the Test set results 
+Making a single prediction 
+Getting the final linear regression equation (with the values of the coefficients)
+
+Decision Tree Regression
+
+will work good for higher dimensional Data Sets
+step1: Pick at random k data points from the training set
+step2: Build the decision tree associated to these k data points
+step3: choose the number Ntree of trees you want to build and repeat STEP 1 & 2
+step4: For a new data point, make each one of your Ntree trees predict the 
+value of Y to for the data point in question and assign the new data point the average across
+ all of the predicted Y values.
+Step 1 − First, start with the selection of random samples from a given dataset.
+
+Step 2 − Next, this algorithm will construct a decision tree for every sample. Then it will get the prediction result from every decision tree.
+
+Step 3 − In this step, voting will be performed for every predicted result.
+
+Step 4 − At last, select the most voted prediction result as the final prediction result.
+
+R-Squared
+
+R-squared tells us what percent of the prediction error in the y variable is eliminated when we use least-squares regression on the x variable. 
+As a result, r 2 r^2 r2 is also called the coefficient of determination.
+R^2 = 1 - SSres/SStot
+SSres = SUM(yi - yi^)^2
+SStot = SUM(yi - yavg)^2
+
+R^2 Will never decrease 
+used for multi linear regression
+
+Adjusted R^2
+
+Adj R^2 = 1 - (1 - R^2) n - 1 / n - p - 1
+
+p - number of regressors
+n - sample size
+
+try all models using r ^ 2 coefficients and see which one will give best accuracy
+
+Classification
+
+1)Logistic Regression
+this model will predict either 0 or 1 
+
+prediction boundary line where the classifier will separate two classifiers 
+
+the boundary line is straight line because the logistic regression is a linear classifier
+
+the logistic regression model very good at separating two classifiers 
+to build model that has less prediction errors
+
+non linear classifier
+
+KNN - K-Nearest-Neughbour
+step1:Choose the number k of neighbours
+step2:Take the K nearest neighbours of the new data point, according to the eculidean distance
+step3:Among these k neighbours, count the number of data points in each category
+step4:Assign the new data point to the category where you counted the most neighbours
+Your Model is Ready
+
+Machine Learning we want to avoid overfitting
+
+In the K-NN algorithm do we need to specify the number of neighbours ?
+
+Yes
+is a non linear classifier
+
+SVM
+
+is Different and Special Model compared to other models
+
+What's So Special About SVMS?
+
+very extreme case oF Algorithm 
+
+SVM searches through Maximum Margin. this line which separating these decision boundarys is way we are building the model.
+
+SVM
+
+Two Types
+1)Linearly Separable
+2)Not Linearly Separable
+
+A Higher-Dimensional Space
+Take a Non Linear Separable Dataset and Mapp into a Higher-Dimensional Space and get a Linearly Separable Dataset
+
+Mapping to a higher Dimensional Spacecan be highly compute-intensive
+
+
+K-means
+
+Decision Trees
+ 
+ Old Method
+ Reborn with Upgrades
+ Random Forest
+ Gradient Boosting
+ etc
+ 
+ 
+ kmeans  is designed to find clusters for you
+ steps
+ step1: Choose the number of clusters
+ step2: Select at random k points, the centroids(not necessary from your dataset)
+ step3: Assign each data point to the closest centroid -> that forms the k clusters
+ eculidean distances
+ step4: compute and place the new centroid of each clusters
+ find the center of gravity for each new point and place it
+ step5: Reassign each data point to the new closest centroid.
+ if any reassignment took place. go to step4, otherwise go to FIN
+ Your Model is REady
+ 
+ we are depending variable
+ we use elbow method to find the optimal numbe rof clusters
+ we will train the data set with optimal number of clusters
+ identify the patterns or clusters in data
+ perpedicular to the line the point will be same distance will be there
+
+hierarchical Clustering Algorithm
+
+Assoiate Rule Learning
+
+1)Apriori 
+
+People WHo bought also bought something is know as appriori
+Movie Recommendation: Support(M) = #user watchlists containing M
+			------------------------------------------------
+				#User Watchlists
+
+Market Basket Optimization: Support(I) = #transactions containing I
+						----------------------------------
+							#transactions
+Appriori - Confidence
+
+Movie Recommendation: Confidence(M1 -> M2) =  #User Watchlists Containing M1 and M2
+							  -----------------------------------------
+								#User Watchlist Containing M1
+
+AI Master Class 30 Days Internship in Pantech Solutions 
+
+
+
